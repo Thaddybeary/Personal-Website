@@ -1,0 +1,14 @@
+requests = [8, 5, 4, 6, 1]
+node = [8, 16]
+
+def start( requests, node):
+  if sum(requests) == 0:
+    return True
+  else:
+    for j in len(node):
+      if requests[0] <= node[j]:
+        node[j] -= requests[0]
+        start(requests, node)
+    return False
+
+start(requests, node)
