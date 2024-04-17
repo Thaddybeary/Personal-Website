@@ -1,18 +1,14 @@
-import React from "react"
 import BiographyToHeader from "./components/biographyToHeader";
-import particlesJS from 'particles.js';
+import ParticlesBackground from "./components/particlesBackground";
+import TimelineComponent from "./components/timelineComponent";
 import odysea from "./images/Odysea.sg.png";
 import swe_project from "./images/SC2006 Demo Video.mp4";
-import particlesConfig from "./config/particlesConfig";
 
 function App() {
-  React.useEffect(() => {
-    particlesJS("particles-js", particlesConfig);
-  }, []);
-
   return (
-    <div id="particles-js" className=" flex flex-col justify-center items-center bg-black">
-      <header className=" flex justify-center items-center w-full h-screen">
+    <div id="particles-js" className=" flex flex-col justify-center items-center">
+      <ParticlesBackground/>
+      <header className=" flex justify-center items-center w-full h-[75vh]">
         <BiographyToHeader />
       </header>
       <body className=" flex flex-col w-full gap-20">
@@ -20,9 +16,9 @@ function App() {
           <h3 className=" text-white text-4xl">Projects</h3>
           <div className=" flex w-3/4 justify-evenly items-center gap-10">
             <div
-              className=" flex flex-col w-1/2 bg-white p-5 rounded-md gap-3 cursor-pointer"
+              className=" flex flex-col w-1/2 bg-white p-5 rounded-md gap-3 cursor-pointer shadow-md"
               onClick={() => window.open("https://odysea.sg", "_blank")}
-            >
+            >[75vh]
               <img src={odysea} alt="odysea" />
               <p>
                 Built using Next.js with codebase and algorithm written in
@@ -41,7 +37,7 @@ function App() {
                 linked to custom domain, odysea.sg.
               </p>
             </div>
-            <div className=" flex w-1/2 bg-white p-5 rounded-md gap-3">
+            <div className=" flex w-1/2 bg-white p-5 rounded-md gap-3 shadow-md">
               <video autoPlay loop muted className=" w-1/2">
                 <source src={swe_project} type="video/mp4" />
               </video>
@@ -64,11 +60,9 @@ function App() {
             </div>
           </div>
         </section>
-        <section className=" flex flex-col justify-center items-center w-full">
+        <section className=" flex flex-col justify-center items-center w-full gap-5">
           <h3 className=" text-white text-4xl">Experience</h3>
-          <div>
-
-          </div>
+          <TimelineComponent/>
         </section>
       </body>
     </div>
