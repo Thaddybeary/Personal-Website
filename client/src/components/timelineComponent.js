@@ -4,7 +4,7 @@ import { Chrono } from "react-chrono";
 const TimelineComponent = () => {
   const items = [
     {
-      title: "June 2023",
+      title: "June 2023 (6 Months)",
       cardTitle: "Foodline Internship",
       cardSubtitle: "Full-stack Software Engineer",
       cardDetailedText:
