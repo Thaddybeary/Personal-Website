@@ -38,8 +38,38 @@ const createBioText = async ( req, res) => {
 }
 
 //delete bioText
+const deleteBioText = async ( req, res) => {
+  const { id } = req.params
+
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'no such bioText'})
+  }
+
+  const bioText = await BioText.findByIdAndDelete(id)
+
+  if(!bioText){
+    return res.status(400).json({error: 'no such bioText'})
+  }
+
+  res.status(200).json(bioText)
+}
 
 //update bioText
+const updateBioText = async (req, res) => {
+  const { id } = req.params
+
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'no such bioText'})
+  }
+
+  const bioText = await BioText.findByIdAndUpdate(id)
+
+  if(!bioText){
+    return res.status(400).json({error: 'no such bioText'})
+  }
+
+  res.status(200).json(bioText)
+}
 
 module.exports = {
   createBioText
