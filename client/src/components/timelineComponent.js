@@ -21,7 +21,8 @@ const TimelineComponent = () => {
       title: "March 2024",
       cardTitle: "Personal Website",
       cardSubtitle: "Full-Stack Website",
-      cardDetailedText: "",
+      cardDetailedText:
+        "I built my personal website to practice and showcase my frontend development skills while providing a platform to feature my projects and experiences. The site is built using React, with a focus on responsive design, enhanced styling using Tailwind CSS, and interactive elements through MUI and React Router. I integrated features like timeline components and animations for an engaging user experience. Through this project, I improved my skills in designing responsive interfaces, managing complex state, and effectively utilizing modern frontend libraries.",
     },
   ];
 
